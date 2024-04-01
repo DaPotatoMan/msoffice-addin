@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     inputs: [
       {
         src: resolve(__dirname, '../manifest.xml'),
-        output: 'office-app/manifest.xml',
+        route: 'office-app/manifest.xml',
       },
     ],
   },

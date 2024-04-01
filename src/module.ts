@@ -30,7 +30,7 @@ export default defineNuxtModule<Config>({
       // Generate files
       manifests.forEach((entry) => {
         fs.outputFileSync(
-          path.resolve(publicDir, entry.output),
+          path.resolve(publicDir, entry.route),
           entry.content,
         )
       })

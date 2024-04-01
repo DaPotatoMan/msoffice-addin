@@ -22,9 +22,9 @@ export default (params: Config): Plugin => {
   }
 
   /** Get a manifest by output path */
-  function getManifest(outputPath: string) {
+  function getManifest(route: string) {
     const outputs = generate()
-    return outputs.find(entry => entry.output === outputPath)
+    return outputs.find(entry => entry.route === route)
   }
 
   return {
@@ -45,7 +45,7 @@ export default (params: Config): Plugin => {
     },
 
     configureServer(server) {
-      const paths = params.inputs.flatMap(i => i.output)
+      const paths = params.inputs.flatMap(i => i.route)
 
       server.middlewares.use((req, res, next) => {
         const { url } = req
@@ -69,7 +69,7 @@ export default (params: Config): Plugin => {
       for (const entry of manifests) {
         this.emitFile({
           type: 'asset',
-          fileName: entry.output,
+          fileName: entry.route,
           source: entry.content,
         })
       }

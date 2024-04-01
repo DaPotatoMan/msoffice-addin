@@ -1,4 +1,8 @@
 export interface ManifestEntry {
   src: string
-  output: string
+
+  /**
+   * Where manifest will be generated as `{domain}/{route}`
+   */
+  route: string
 }

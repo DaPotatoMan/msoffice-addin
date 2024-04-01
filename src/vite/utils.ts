@@ -19,7 +19,7 @@ export function transformManifests(params: {
   const entries = <ManifestEntryContent[]>[]
   const env = loadEnv(params.mode, params.envDir)
 
-  for (const { src, output } of params.inputs) {
+  for (const { src, route } of params.inputs) {
     const absoluteSrc = resolve(src)
 
     if (!fs.existsSync(src)) {
@@ -43,7 +43,7 @@ export function transformManifests(params: {
 
     entries.push({
       src,
-      output,
+      route,
       content,
     })
   }
