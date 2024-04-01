@@ -1,19 +1,49 @@
-import { addPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
+import process from 'node:process'
+import path from 'node:path'
+import fs from 'fs-extra'
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
+import { createResolver, defineNuxtModule } from '@nuxt/kit'
+import { transformManifests } from './vite/utils'
+import type { Config } from './vite'
 
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule<Config>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule',
+    name: 'msoffice-addin',
+    configKey: 'office',
   },
-  // Default configuration options of the Nuxt module
-  defaults: {},
   setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url)
+    const { vite } = nuxt.options
+    const { resolve } = createResolver(import.meta.url)
+    const publicDir = resolve('./runtime/public')
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    const manifests = transformManifests({
+      mode: vite.mode!,
+      envDir: vite.envDir ?? process.cwd(),
+      inputs: options.inputs,
+    })
+
+    nuxt.hook('nitro:config', async (nitro) => {
+      // Cleanup dir
+      fs.ensureDirSync(publicDir)
+      fs.emptyDir(publicDir)
+
+      // Generate files
+      manifests.forEach((entry) => {
+        fs.outputFileSync(
+          path.resolve(publicDir, entry.output),
+          entry.content,
+        )
+      })
+
+      nitro.publicAssets ||= []
+      nitro.publicAssets.push({
+        dir: publicDir,
+        maxAge: 60 * 60 * 24 * 365, // 1 year
+      })
+    })
+
+    nuxt.hook('close', () => {
+      fs.emptyDir(publicDir)
+    })
   },
 })
