@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: ['../src/module'],
   devtools: { enabled: true },
 
-  office: {
+  msOfficeAddin: {
     manifests: [
       {
         src: resolve(__dirname, '../manifest.xml'),

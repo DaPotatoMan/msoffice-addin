@@ -8,7 +8,7 @@ import type { MSOfficeAddinConfig } from './vite/types'
 export default defineNuxtModule<MSOfficeAddinConfig>({
   meta: {
     name: 'msoffice-addin',
-    configKey: 'office',
+    configKey: 'msOfficeAddin',
   },
 
   setup(options, nuxt) {
