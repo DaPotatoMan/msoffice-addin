@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   office: {
-    inputs: [
+    manifests: [
       {
         src: resolve(__dirname, '../manifest.xml'),
         route: '/office-app/manifest.xml',

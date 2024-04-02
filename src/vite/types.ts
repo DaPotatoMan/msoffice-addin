@@ -13,7 +13,7 @@ export interface ManifestEntryContent extends ManifestEntry {
 
 export interface MSOfficeAddinConfig {
   /** Input manifests */
-  inputs: ManifestEntry[]
+  manifests: ManifestEntry[]
 
   /** Routes where office.js will be injected */
   injectRoutes: (string | RegExp)[]

@@ -11,7 +11,7 @@ export default (params: MSOfficeAddinConfig): Plugin => {
   function generate() {
     return transformManifests({
       mode,
-      inputs: params.inputs,
+      inputs: params.manifests,
       envDir: viteConfig.envDir ?? process.cwd(),
     })
   }
@@ -40,7 +40,7 @@ export default (params: MSOfficeAddinConfig): Plugin => {
     },
 
     configureServer(server) {
-      const paths = params.inputs.flatMap(i => i.route)
+      const paths = params.manifests.flatMap(i => i.route)
 
       server.middlewares.use((req, res, next) => {
         const { url } = req

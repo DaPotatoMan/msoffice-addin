@@ -18,7 +18,7 @@ export default defineNuxtModule<MSOfficeAddinConfig>({
     const manifests = transformManifests({
       mode: vite.mode!,
       envDir: vite.envDir ?? process.cwd(),
-      inputs: options.inputs,
+      inputs: options.manifests,
     })
 
     const contextImportKey = '#office-addin-content'

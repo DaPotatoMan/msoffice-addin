@@ -7,7 +7,7 @@ export default defineNitroPlugin(async (nitroApp) => {
   const { manifests, options } = context as OfficeAddinVirtualContext
   const OFFICE_JS_URL = 'https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js'
 
-  if (!options || !options.inputs.length)
+  if (!options || !options.manifests.length)
     return
 
   // Generate routes
