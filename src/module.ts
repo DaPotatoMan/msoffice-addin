@@ -1,20 +1,19 @@
 import process from 'node:process'
-import path from 'node:path'
-import fs from 'fs-extra'
 
-import { createResolver, defineNuxtModule } from '@nuxt/kit'
+import { addPrerenderRoutes, addServerPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
+
 import { transformManifests } from './vite/utils'
-import type { Config } from './vite'
+import type { MSOfficeAddinConfig } from './vite/types'
 
-export default defineNuxtModule<Config>({
+export default defineNuxtModule<MSOfficeAddinConfig>({
   meta: {
     name: 'msoffice-addin',
     configKey: 'office',
   },
+
   setup(options, nuxt) {
     const { vite } = nuxt.options
     const { resolve } = createResolver(import.meta.url)
-    const publicDir = resolve('./runtime/public')
 
     const manifests = transformManifests({
       mode: vite.mode!,
@@ -22,28 +21,20 @@ export default defineNuxtModule<Config>({
       inputs: options.inputs,
     })
 
+    const contextImportKey = '#office-addin-content'
+    const context = `export default ${JSON.stringify({ manifests, options })}`
+
+    // Set manifest routes to pre-rendering
+    addPrerenderRoutes(
+      manifests.flatMap(entry => entry.route),
+    )
+
+    // Register nitro plugin
+    addServerPlugin(resolve('./runtime/loader.server'))
+
     nuxt.hook('nitro:config', async (nitro) => {
-      // Cleanup dir
-      fs.ensureDirSync(publicDir)
-      fs.emptyDir(publicDir)
-
-      // Generate files
-      manifests.forEach((entry) => {
-        fs.outputFileSync(
-          path.resolve(publicDir, entry.route),
-          entry.content,
-        )
-      })
-
-      nitro.publicAssets ||= []
-      nitro.publicAssets.push({
-        dir: publicDir,
-        maxAge: 60 * 60 * 24 * 365, // 1 year
-      })
-    })
-
-    nuxt.hook('close', () => {
-      fs.emptyDir(publicDir)
+      nitro.virtual ||= {}
+      nitro.virtual[contextImportKey] = context
     })
   },
 })

@@ -1,14 +1,10 @@
 import fs from 'node:fs'
 import { resolve } from 'node:path'
 import { loadEnv, normalizePath } from 'vite'
-import type { ManifestEntry } from './types'
+import type { ManifestEntry, ManifestEntryContent } from './types'
 
 export function getPath(paths: string[]) {
   return normalizePath(resolve(...paths))
-}
-
-interface ManifestEntryContent extends ManifestEntry {
-  content: string
 }
 
 export function transformManifests(params: {

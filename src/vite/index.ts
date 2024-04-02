@@ -1,15 +1,10 @@
 import process from 'node:process'
 
 import type { Plugin, UserConfig } from 'vite'
-import type { ManifestEntry } from './types'
+import type { MSOfficeAddinConfig } from './types'
 import { transformManifests } from './utils'
 
-export interface Config {
-  /** Input manifests */
-  inputs: ManifestEntry[]
-}
-
-export default (params: Config): Plugin => {
+export default (params: MSOfficeAddinConfig): Plugin => {
   let mode: string
   let viteConfig: UserConfig
 
@@ -50,7 +45,7 @@ export default (params: Config): Plugin => {
       server.middlewares.use((req, res, next) => {
         const { url } = req
 
-        if (url && paths.includes(url)) {
+        if (url && paths.includes(url as any)) {
           const manifest = getManifest(url)
 
           if (manifest) {
