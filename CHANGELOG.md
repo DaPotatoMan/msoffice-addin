@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.1...v0.0.2)
+
+### 🩹 Fixes
+
+- **nuxt:** Bundling issues ([3dbe6d9](https://github.com/dapotatoman/msoffice-addin/commit/3dbe6d9))
+
+### 🏡 Chore
+
+- **playground/nuxt:** Add monorepo-env module to load root env ([3617c35](https://github.com/dapotatoman/msoffice-addin/commit/3617c35))
+- Update eslint config ([f9bd674](https://github.com/dapotatoman/msoffice-addin/commit/f9bd674))
+
+### ❤️ Contributors
+
+- Dapotatoman <iam.fahadul@gmail.com>
+
 ## v0.0.1
 
 
