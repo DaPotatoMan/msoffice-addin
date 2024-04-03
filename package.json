@@ -1,13 +1,13 @@
 {
-  "name": "my-module",
+  "name": "msoffice-addin",
   "type": "module",
-  "version": "1.0.0",
-  "description": "Microsoft office addin module for Nuxt",
+  "version": "0.0.0",
+  "description": "Microsoft office addin module for Nuxt abd vite",
   "author": "Fahadul Islam @dapotatoman",
   "license": "MIT",
-  "repository": "dapotatoman/nuxt-msoffice-addin",
+  "repository": "dapotatoman/msoffice-addin",
   "keywords": [
-    "env",
+    "office-addin",
     "nuxt",
     "vite-plugin"
   ],

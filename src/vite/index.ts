@@ -4,7 +4,7 @@ import type { Plugin, UserConfig } from 'vite'
 import type { MSOfficeAddinConfig } from './types'
 import { transformManifests } from './utils'
 
-export default (params: MSOfficeAddinConfig): Plugin => {
+export default function MSOfficeAddin(params: MSOfficeAddinConfig): Plugin {
   let mode: string
   let viteConfig: UserConfig
 
