@@ -23,7 +23,7 @@ export default function MSOfficeAddin(params: MSOfficeAddinConfig): Plugin {
   }
 
   return {
-    name: 'vite-plugin-office-addin',
+    name: 'msoffice-addin-vite',
     enforce: 'post',
 
     async config(config, env) {
