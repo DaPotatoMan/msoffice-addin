@@ -63,6 +63,9 @@ importers:
 
   playground/nuxt:
     dependencies:
+      monorepo-env:
+        specifier: ^0.0.4
+        version: 0.0.4(@types/node@20.12.2)(rollup@3.29.4)
       nuxt:
         specifier: latest
         version: 3.11.1(@types/node@20.12.2)(@unocss/reset@0.58.8)(eslint@8.57.0)(floating-vue@5.2.2)(rollup@3.29.4)(typescript@5.4.3)(unocss@0.58.8)(vite@5.2.7)
@@ -1128,6 +1131,37 @@ packages:
       '@netlify/node-cookies': 0.1.0
       urlpattern-polyfill: 8.0.2
 
+  /@node-kit/extra.fs@3.2.0:
+    resolution: {integrity: sha512-BtGZcB4ffMneAyKd2qy0umOURc7kMjgNOQlEQNqgkQwcwoGejqiJLQpzKVhAr2waBx7OLZx+/3sNzGgngSzx7w==}
+    hasBin: true
+    dev: false
+
+  /@node-kit/lerna-workspace-root@3.2.0:
+    resolution: {integrity: sha512-z9yfrFJzFuib4Pz1fU6tn6YmKhrISpopbKJsh8BfMXYmKRF4/8Td2JPfNIubAN2rlG3F3hSO4VPCDRwHNaKOhg==}
+    hasBin: true
+    dependencies:
+      '@node-kit/extra.fs': 3.2.0
+      find-up: 5.0.0
+    dev: false
+
+  /@node-kit/pnpm-workspace-root@3.2.0:
+    resolution: {integrity: sha512-+6/4wT34/iipIaFc9P2dYxRNdfrcUULDERnWd+xdLjP4K2VyPRpx/E83BQ1eXhuuNtvevKI5yOxIR03+gb97ZA==}
+    hasBin: true
+    dependencies:
+      '@node-kit/extra.fs': 3.2.0
+      '@pnpm/error': 5.0.3
+      find-up: 5.0.0
+    dev: false
+
+  /@node-kit/yarn-workspace-root@3.2.0:
+    resolution: {integrity: sha512-CJmCTaM0Goi9bRL4gfFxx1INxU9ETyqcnPGFoOMIHCyxJYRpB5C+C3x4BNWsBsBErdZ+BoyvgLsPj6jukCnFFQ==}
+    hasBin: true
+    dependencies:
+      '@node-kit/extra.fs': 3.2.0
+      find-up: 5.0.0
+      micromatch: 4.0.5
+    dev: false
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -1755,6 +1789,18 @@ packages:
     engines: {node: '>=14'}
     requiresBuild: true
     optional: true
+
+  /@pnpm/constants@7.1.1:
+    resolution: {integrity: sha512-31pZqMtjwV+Vaq7MaPrT1EoDFSYwye3dp6BiHIGRJmVThCQwySRKM7hCvqqI94epNkqFAAYoWrNynWoRYosGdw==}
+    engines: {node: '>=16.14'}
+    dev: false
+
+  /@pnpm/error@5.0.3:
+    resolution: {integrity: sha512-ONJU5cUeoeJSy50qOYsMZQHTA/9QKmGgh1ATfEpCLgtbdwqUiwD9MxHNeXUYYI/pocBCz6r1ZCFqiQvO+8SUKA==}
+    engines: {node: '>=16.14'}
+    dependencies:
+      '@pnpm/constants': 7.1.1
+    dev: false
 
   /@polka/url@1.0.0-next.25:
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
@@ -6093,6 +6139,33 @@ packages:
       pkg-types: 1.0.3
       ufo: 1.5.3
 
+  /monorepo-env@0.0.4(@types/node@20.12.2)(rollup@3.29.4):
+    resolution: {integrity: sha512-cAQHP1wIqoVLL+Y519Dk9vg+1GWZA1TYJlUOWrgA3nvKIBcYEk17cU59Dqjlcb/Q4ImMnexVTFltR81FoGVoag==}
+    requiresBuild: true
+    dependencies:
+      '@nuxt/kit': 3.11.1(rollup@3.29.4)
+      monorepo-root: 3.2.0
+      scule: 1.3.0
+      vite: 5.2.7(@types/node@20.12.2)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - rollup
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: false
+
+  /monorepo-root@3.2.0:
+    resolution: {integrity: sha512-pZCNiwsoADqHo/GuRDsGZHzjQcsGcxMJfRX32suVikfpDMDzllJkEGSM2RawxLbUv+ywP/cvMwvghmYb/m6sdw==}
+    hasBin: true
+    dependencies:
+      workspace-root: 3.2.0
+    dev: false
+
   /mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -8889,6 +8962,15 @@ packages:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
       string-width: 4.2.3
+
+  /workspace-root@3.2.0:
+    resolution: {integrity: sha512-pa294ZcHkGVfVomqtgNZjbJXwae7awRDni8hVkQSBastuHS2M9LsZ75mToajutFmyYo0tvjO0RWoiKAf3To6ug==}
+    hasBin: true
+    dependencies:
+      '@node-kit/lerna-workspace-root': 3.2.0
+      '@node-kit/pnpm-workspace-root': 3.2.0
+      '@node-kit/yarn-workspace-root': 3.2.0
+    dev: false
 
   /wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}

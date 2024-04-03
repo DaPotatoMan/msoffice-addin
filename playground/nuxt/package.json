@@ -9,6 +9,7 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "monorepo-env": "^0.0.4",
     "nuxt": "latest"
   }
 }

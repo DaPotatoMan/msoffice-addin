@@ -5,6 +5,7 @@ const root = resolve(__dirname, '../..')
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
+    'monorepo-env',
     resolve(root, 'src/module'),
   ],
 
