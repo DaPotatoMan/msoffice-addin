@@ -1,5 +1,4 @@
 import type { OfficeAddinVirtualContext } from '../vite/types'
-import { OFFICE_JS_LOADER_SNIPPET } from '../vite/utils'
 
 // @ts-expect-error virtual import
 import context from '#office-addin-content'
@@ -32,7 +31,10 @@ export default defineNitroPlugin(async (nitroApp) => {
         : entry === currentPath,
     )
 
-    if (matches)
-      html.head.push(OFFICE_JS_LOADER_SNIPPET)
+    if (matches) {
+      html.head.push(
+        `<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" async defer></script>`,
+      )
+    }
   })
 })
