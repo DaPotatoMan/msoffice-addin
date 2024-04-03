@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.2...v0.0.3)
+
+### 🩹 Fixes
+
+- **nuxt/runtime:** DefineNitroPlugin import not working ([b047e5b](https://github.com/dapotatoman/msoffice-addin/commit/b047e5b))
+
+### ❤️ Contributors
+
+- Dapotatoman <iam.fahadul@gmail.com>
+
 ## v0.0.2
 
 [compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.1...v0.0.2)

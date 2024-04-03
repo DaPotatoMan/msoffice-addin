@@ -1,7 +1,7 @@
 {
   "name": "msoffice-addin",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Microsoft office addin module for Nuxt abd vite",
   "author": "Fahadul Islam @dapotatoman",
   "license": "MIT",
