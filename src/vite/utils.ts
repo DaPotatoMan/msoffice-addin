@@ -3,6 +3,9 @@ import { resolve } from 'node:path'
 import { loadEnv, normalizePath } from 'vite'
 import type { ManifestEntry, ManifestEntryContent } from './types'
 
+export const OFFICE_JS_URL = 'https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js'
+export const OFFICE_JS_LOADER_SNIPPET = `<script src="${OFFICE_JS_URL}" async defer></script>`
+
 export function getPath(paths: string[]) {
   return normalizePath(resolve(...paths))
 }
