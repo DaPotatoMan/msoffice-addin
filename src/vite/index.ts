@@ -50,7 +50,7 @@ export default function MSOfficeAddin(params: MSOfficeAddinConfig): Plugin {
 
           if (manifest) {
             res.setHeader('content-type', 'text/xml')
-            return res.end(manifest)
+            return res.end(manifest.content)
           }
         }
 
@@ -64,7 +64,7 @@ export default function MSOfficeAddin(params: MSOfficeAddinConfig): Plugin {
       for (const entry of manifests) {
         this.emitFile({
           type: 'asset',
-          fileName: entry.route,
+          fileName: entry.route.slice(1),
           source: entry.content,
         })
       }
