@@ -4,7 +4,7 @@ import { $fetch, setup } from '@nuxt/test-utils/e2e'
 
 describe('ssr', async () => {
   await setup({
-    rootDir: fileURLToPath(new URL('../playground', import.meta.url)),
+    rootDir: fileURLToPath(new URL('../playground/nuxt', import.meta.url)),
   })
 
   it('renders office manifest', () => {

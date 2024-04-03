@@ -61,11 +61,20 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0(@types/node@20.12.2)
 
-  playground:
+  playground/nuxt:
     dependencies:
       nuxt:
         specifier: latest
         version: 3.11.1(@types/node@20.12.2)(@unocss/reset@0.58.8)(eslint@8.57.0)(floating-vue@5.2.2)(rollup@3.29.4)(typescript@5.4.3)(unocss@0.58.8)(vite@5.2.7)
+
+  playground/vite:
+    devDependencies:
+      typescript:
+        specifier: ^5.2.2
+        version: 5.4.3
+      vite:
+        specifier: ^5.2.0
+        version: 5.2.7(@types/node@20.12.2)
 
 packages:
 

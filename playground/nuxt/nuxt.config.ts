@@ -1,17 +1,21 @@
 import { resolve } from 'node:path'
 
+const root = resolve(__dirname, '../..')
+
 export default defineNuxtConfig({
-  modules: ['../src/module'],
   devtools: { enabled: true },
+  modules: [
+    resolve(root, 'src/module'),
+  ],
 
   msOfficeAddin: {
     manifests: [
       {
-        src: resolve(__dirname, '../manifest.xml'),
+        src: resolve(root, 'manifest.xml'),
         route: '/office-app/manifest.xml',
       },
       {
-        src: resolve(__dirname, '../manifest.xml'),
+        src: resolve(root, 'manifest.xml'),
         route: '/office-app-alt/manifest.xml',
       },
     ],

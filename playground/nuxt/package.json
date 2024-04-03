@@ -1,5 +1,5 @@
 {
-  "name": "msoffice-addin-playground",
+  "name": "playground-nuxt",
   "type": "module",
   "private": true,
   "scripts": {
