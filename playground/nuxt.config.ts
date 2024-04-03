@@ -16,6 +16,6 @@ export default defineNuxtConfig({
       },
     ],
 
-    injectRoutes: ['/'],
+    injectOfficeJS: ['/'],
   },
 })

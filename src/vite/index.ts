@@ -2,7 +2,7 @@ import process from 'node:process'
 
 import type { Plugin, UserConfig } from 'vite'
 import type { MSOfficeAddinConfig } from './types'
-import { transformManifests } from './utils'
+import { OFFICE_JS_LOADER_SNIPPET, transformManifests } from './utils'
 
 export default function MSOfficeAddin(params: MSOfficeAddinConfig): Plugin {
   let mode: string
@@ -37,6 +37,24 @@ export default function MSOfficeAddin(params: MSOfficeAddinConfig): Plugin {
 
       mode = env.mode
       return viteConfig = config
+    },
+
+    transformIndexHtml(html, ctx) {
+      const path = ctx.path
+      const matches = params.injectOfficeJS.some(entry =>
+        entry instanceof RegExp
+          ? entry.test(path)
+          : entry === path,
+      )
+
+      if (!matches)
+        return html
+
+      // Inject office js
+      return html.replace(
+        /<\/head>/,
+        `${OFFICE_JS_LOADER_SNIPPET}\n</head>`,
+      )
     },
 
     configureServer(server) {

@@ -20,13 +20,13 @@ export default defineNitroPlugin(async (nitroApp) => {
 
   // Inject office.js script
   nitroApp.hooks.hook('render:html', (html, context) => {
-    const { injectRoutes = [] } = options
+    const { injectOfficeJS = [] } = options
     const currentPath = context.event.path
 
-    if (!injectRoutes.length)
+    if (!injectOfficeJS.length)
       return
 
-    const matches = injectRoutes.some(entry =>
+    const matches = injectOfficeJS.some(entry =>
       entry instanceof RegExp
         ? entry.test(currentPath)
         : entry === currentPath,

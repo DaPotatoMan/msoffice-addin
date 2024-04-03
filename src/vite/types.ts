@@ -16,7 +16,7 @@ export interface MSOfficeAddinConfig {
   manifests: ManifestEntry[]
 
   /** Routes where office.js will be injected */
-  injectRoutes: (string | RegExp)[]
+  injectOfficeJS: (string | RegExp)[]
 }
 
 export interface OfficeAddinVirtualContext {

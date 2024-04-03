@@ -55,7 +55,7 @@ export default defineConfig({
       ],
 
       /** Office.js will be injected to index.html page */
-      injectRoutes: ['/']
+      injectOfficeJS: true
     }),
   ],
 })

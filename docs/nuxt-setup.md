@@ -54,7 +54,7 @@ export default defineNuxtConfig({
     ],
 
     /** Office.js will be injected to index.html page */
-    injectRoutes: ['/'],
+    injectOfficeJS: ['/'],
   },
 })
 ```
