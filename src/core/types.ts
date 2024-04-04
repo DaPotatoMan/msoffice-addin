@@ -7,7 +7,8 @@ export interface ManifestEntry {
   route: `/${string}.xml`
 }
 
-export interface ManifestEntryContent extends ManifestEntry {
+/** Generated manifest */
+export interface GeneratedManifest extends ManifestEntry {
   content: string
 }
 
@@ -21,5 +22,5 @@ export interface MSOfficeAddinConfig {
 
 export interface OfficeAddinVirtualContext {
   options: MSOfficeAddinConfig
-  manifests: ManifestEntryContent[]
+  manifests: GeneratedManifest[]
 }

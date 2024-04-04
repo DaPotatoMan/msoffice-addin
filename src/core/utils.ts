@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import { resolve } from 'node:path'
 import { loadEnv, normalizePath } from 'vite'
-import type { ManifestEntry, ManifestEntryContent } from './types'
+import type { GeneratedManifest, ManifestEntry } from './types'
 
 export const OFFICE_JS_URL = 'https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js'
 export const OFFICE_JS_LOADER_SNIPPET = `<script src="${OFFICE_JS_URL}" async defer></script>`
@@ -15,7 +15,7 @@ export function transformManifests(params: {
   mode: string
   envDir: string
 }) {
-  const entries = <ManifestEntryContent[]>[]
+  const entries = <GeneratedManifest[]>[]
   const env = loadEnv(params.mode, params.envDir)
 
   for (const { src, route } of params.inputs) {
