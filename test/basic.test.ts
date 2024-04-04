@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { $fetch, setup } from '@nuxt/test-utils/e2e'
+import { OFFICE_JS_URL } from '../src/core'
 
 describe('ssr', async () => {
   await setup({
@@ -13,14 +14,12 @@ describe('ssr', async () => {
   })
 
   it('injects office.js code', () => {
-    const SCRIPT_URL = 'https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js'
-
     expect($fetch('/'))
       .resolves
-      .toContain(SCRIPT_URL)
+      .toContain(OFFICE_JS_URL)
 
     expect($fetch('/404.html'))
       .resolves
-      .not.toContain(SCRIPT_URL)
+      .not.toContain(OFFICE_JS_URL)
   })
 })
