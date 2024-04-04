@@ -8,7 +8,7 @@ npx nuxi module add msoffice-addin
 
 #### Define manifest file
 
-https://github.com/DaPotatoMan/msoffice-addin/blob/d9488b7041dbdeac49e3e08821b050ea3f15fb93/manifest.xml#L1C1-L17C13
+https://github.com/DaPotatoMan/msoffice-addin/blob/145a4a7e66c66a46180cd0fdff77e3fa209ae768/manifest.xml#L1-L17
 
 #### Define .env file
 
