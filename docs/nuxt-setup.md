@@ -12,13 +12,7 @@ https://github.com/DaPotatoMan/msoffice-addin/blob/145a4a7e66c66a46180cd0fdff77e
 
 #### Define .env file
 
-```env
-VITE_OFFICE_ID=c6890c26-5bbb-40ed-a321-37f07909a2f0
-VITE_OFFICE_DOMAIN=https://www.contoso.com
-VITE_OFFICE_PROVIDER_NAME=Contoso, Ltd
-VITE_OFFICE_DISPLAY_NAME=Contoso App
-VITE_OFFICE_DESCRIPTION=Office add-in for Contoso App
-```
+https://github.com/DaPotatoMan/msoffice-addin/blob/57892cc4e1c06f7dfe45685e53ede7207cf11ec2/.env.local#L1-L5
 
 #### Update config
 
