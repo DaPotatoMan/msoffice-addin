@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- **nuxt:** H3 warning for routes handler ([f146f0c](https://github.com/dapotatoman/msoffice-addin/commit/f146f0c))
+
+### ❤️ Contributors
+
+- Dapotatoman <iam.fahadul@gmail.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.2...v0.0.3)
