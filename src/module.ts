@@ -1,6 +1,6 @@
 import process from 'node:process'
 import { addPrerenderRoutes, addServerPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
-import { type MSOfficeAddinConfig, transformManifests } from './core'
+import { type MSOfficeAddinConfig, serialize, transformManifests } from './core'
 
 export default defineNuxtModule<MSOfficeAddinConfig>({
   meta: {
@@ -20,7 +20,7 @@ export default defineNuxtModule<MSOfficeAddinConfig>({
     })
 
     const contextImportKey = '#office-addin-content'
-    const context = `export default ${JSON.stringify({ manifests, options })}`
+    const context = `export default ${serialize({ manifests, options })}`
 
     // Set manifest routes to pre-rendering
     addPrerenderRoutes(
