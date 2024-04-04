@@ -3,8 +3,8 @@ import { resolve } from 'node:path'
 import { loadEnv } from 'vite'
 import type { GeneratedManifest, MSOfficeAddinConfig, ManifestEntry } from './types'
 
-export const OFFICE_JS_URL = 'https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js'
-export const OFFICE_JS_LOADER_SNIPPET = `<script src="${OFFICE_JS_URL}" async defer></script>`
+export const OFFICE_JS_URL = 'https://appsforoffice.microsoft.com/lib/1/hosted/office.js'
+export const OFFICE_JS_LOADER_SNIPPET = `<script src="${OFFICE_JS_URL}"></script>`
 
 export function transformManifests(params: {
   inputs: ManifestEntry[]

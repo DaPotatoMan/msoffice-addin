@@ -41,7 +41,7 @@ export default defineNitroPlugin(async (nitro) => {
 
     if (matches) {
       html.head.push(
-        `<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" async defer></script>`,
+        `<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>`,
       )
     }
   })
