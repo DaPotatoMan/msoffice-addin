@@ -8,26 +8,7 @@ npx nuxi module add msoffice-addin
 
 #### Define manifest file
 
-```xml
-<!-- manifest.xml -->
-<?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-  <Id>{VITE_OFFICE_ID}</Id>
-  <Version>1.0</Version>
-  <ProviderName>{VITE_OFFICE_PROVIDER_NAME}</ProviderName>
-  <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="{VITE_OFFICE_DISPLAY_NAME}" />
-  <Description DefaultValue="{VITE_OFFICE_DESCRIPTION}"/>
-  <SupportUrl DefaultValue="{VITE_OFFICE_DOMAIN}/support" />
-  <AppDomains>
-    <AppDomain>{VITE_OFFICE_DOMAIN}</AppDomain>
-  </AppDomains>
-  <DefaultSettings>
-    <SourceLocation DefaultValue="https://www.contoso.com/search_app/Default.aspx" />
-  </DefaultSettings>
-  <Permissions>ReadWriteDocument</Permissions>
-</OfficeApp>
-```
+https://github.com/DaPotatoMan/msoffice-addin/blob/d9488b7041dbdeac49e3e08821b050ea3f15fb93/manifest.xml
 
 #### Define .env file
 
