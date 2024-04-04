@@ -8,11 +8,11 @@ npx nuxi module add msoffice-addin
 
 #### Define manifest file
 
-https://github.com/DaPotatoMan/msoffice-addin/blob/145a4a7e66c66a46180cd0fdff77e3fa209ae768/manifest.xml#L1-L17
+<https://github.com/DaPotatoMan/msoffice-addin/blob/f2d8b46cbf68873828e64cd176e445b344c4094a/manifest.xml#L1-L26>
 
 #### Define .env file
 
-https://github.com/DaPotatoMan/msoffice-addin/blob/57892cc4e1c06f7dfe45685e53ede7207cf11ec2/.env.local#L1-L5
+<https://github.com/DaPotatoMan/msoffice-addin/blob/57892cc4e1c06f7dfe45685e53ede7207cf11ec2/.env.local#L1-L5>
 
 #### Update config
 
@@ -30,8 +30,14 @@ export default defineNuxtConfig({
 
     /** Office.js will be injected to index.html page */
     injectOfficeJS: ['/'],
+
+    defineENV: env => ({
+      VITE_OFFICE_HOST: new URL(env.VITE_OFFICE_DOMAIN).host,
+    }),
   },
 })
 ```
 
 That's it! You can now use msoffice-addin in your Nuxt app ✨
+
+[Learn more about configuration](./config.md)
