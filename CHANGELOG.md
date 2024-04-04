@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.4...v0.0.5)
+
+### 🚀 Enhancements
+
+- Add `defineENV` option ([25a081a](https://github.com/dapotatoman/msoffice-addin/commit/25a081a))
+
+### 🩹 Fixes
+
+- Playgound/vite config ([cc11f86](https://github.com/dapotatoman/msoffice-addin/commit/cc11f86))
+
+### 💅 Refactors
+
+- Code structure ([e111506](https://github.com/dapotatoman/msoffice-addin/commit/e111506))
+- Rename ManifestEntryContent to `GeneratedManifest` ([4c4b7b9](https://github.com/dapotatoman/msoffice-addin/commit/4c4b7b9))
+
+### ❤️ Contributors
+
+- Dapotatoman <iam.fahadul@gmail.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.3...v0.0.4)
