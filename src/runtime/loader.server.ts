@@ -1,5 +1,5 @@
 import { defineNitroPlugin } from 'nitropack/runtime'
-import type { OfficeAddinVirtualContext } from '../vite/types'
+import type { OfficeAddinVirtualContext } from '../core'
 
 // @ts-expect-error virtual import
 import context from '#office-addin-content'

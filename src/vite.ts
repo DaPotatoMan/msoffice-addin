@@ -1,8 +1,6 @@
 import process from 'node:process'
-
 import type { Plugin, UserConfig } from 'vite'
-import type { MSOfficeAddinConfig } from './types'
-import { OFFICE_JS_LOADER_SNIPPET, transformManifests } from './utils'
+import { type MSOfficeAddinConfig, OFFICE_JS_LOADER_SNIPPET, transformManifests } from './core'
 
 export default function MSOfficeAddin(params: MSOfficeAddinConfig): Plugin {
   let mode: string

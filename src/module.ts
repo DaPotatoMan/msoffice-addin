@@ -1,9 +1,6 @@
 import process from 'node:process'
-
 import { addPrerenderRoutes, addServerPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
-
-import { transformManifests } from './vite/utils'
-import type { MSOfficeAddinConfig } from './vite/types'
+import { type MSOfficeAddinConfig, transformManifests } from './core'
 
 export default defineNuxtModule<MSOfficeAddinConfig>({
   meta: {
