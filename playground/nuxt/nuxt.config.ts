@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       },
     ],
 
-    injectOfficeJS: [/.*/, /.*outlook.*/gi],
+    injectOfficeJS: [/^(?!\/404).*$/, /.*outlook.*/gi],
 
     defineENV: env => ({
       VITE_OFFICE_HOST: new URL(env.VITE_OFFICE_DOMAIN).host,

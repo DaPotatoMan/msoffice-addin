@@ -13,7 +13,13 @@ export function serialize(source: object) {
   const content = JSON.stringify(source, replacer, 2)
 
   // De-stringify regex strings
-  const result = content.replaceAll(/"__REGEX__|__REGEX__"/gm, '')
+  const result = content.replaceAll(/"__REGEX__.*?__REGEX__"/gm, (pattern) => {
+    const value = pattern
+      .replaceAll(/"__REGEX__|__REGEX__"/gm, '')
+      .replaceAll('\\\\', '\\')
+
+    return value
+  })
 
   return result
 }
