@@ -14,4 +14,13 @@
     <SourceLocation DefaultValue="https://www.contoso.com/search_app/Default.aspx" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
+  <WebApplicationInfo>
+    <Id>{VITE_OFFICE_ID}</Id>
+    <Resource>api://{VITE_OFFICE_HOST}/outlook/{VITE_OFFICE_ID}</Resource>
+    <Scopes>
+      <Scope>openid</Scope>
+      <Scope>profile</Scope>
+      <Scope>User.Read</Scope>
+    </Scopes>
+  </WebApplicationInfo>
 </OfficeApp>

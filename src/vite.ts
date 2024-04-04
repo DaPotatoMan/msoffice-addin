@@ -9,8 +9,9 @@ export default function MSOfficeAddin(params: MSOfficeAddinConfig): Plugin {
   function generate() {
     return transformManifests({
       mode,
-      inputs: params.manifests,
       envDir: viteConfig.envDir ?? process.cwd(),
+      inputs: params.manifests,
+      defineENV: params.defineENV,
     })
   }
 

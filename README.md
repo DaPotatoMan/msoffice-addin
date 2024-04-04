@@ -25,6 +25,7 @@ MS Office addin for Nuxt and Vite
 <!-- Highlight some of the features your module provide here -->
 - 🌍 Supports both Nuxt & Vite
 - ⚙️ ENV variables support in manifest files
+- 🪝 Define dynamic env variables
 - 🧬 Same manifest routes in dev and build
 - 💉 Auto inject Office.js in routes
 
@@ -32,6 +33,8 @@ MS Office addin for Nuxt and Vite
 
 - [Nuxt](docs/nuxt-setup.md)
 - [Vite](docs/vite-setup.md)
+
+## [Configuration](docs/config.md)
 
 ## Contribution
 

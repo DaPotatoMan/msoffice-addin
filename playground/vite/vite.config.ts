@@ -16,6 +16,10 @@ export default defineConfig({
 
       /** Office.js will be injected to index.html page */
       injectOfficeJS: ['/outlook.html'],
+
+      defineENV: env => ({
+        VITE_OFFICE_HOST: new URL(env.VITE_OFFICE_DOMAIN).host,
+      }),
     }),
   ],
 

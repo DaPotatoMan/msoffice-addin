@@ -22,5 +22,9 @@ export default defineNuxtConfig({
     ],
 
     injectOfficeJS: ['/'],
+
+    defineENV: env => ({
+      VITE_OFFICE_HOST: new URL(env.VITE_OFFICE_DOMAIN).host,
+    }),
   },
 })

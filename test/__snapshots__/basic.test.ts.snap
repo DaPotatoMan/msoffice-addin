@@ -9,13 +9,22 @@ exports[`ssr > renders office manifest 1`] = `
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Contoso App" />
   <Description DefaultValue="Office add-in for Contoso App"/>
-  <SupportUrl DefaultValue="https://www.contoso.com/support" />
+  <SupportUrl DefaultValue="https://contoso.com/support" />
   <AppDomains>
-    <AppDomain>https://www.contoso.com</AppDomain>
+    <AppDomain>https://contoso.com</AppDomain>
   </AppDomains>
   <DefaultSettings>
     <SourceLocation DefaultValue="https://www.contoso.com/search_app/Default.aspx" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
+  <WebApplicationInfo>
+    <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
+    <Resource>api://contoso.com/outlook/c6890c26-5bbb-40ed-a321-37f07909a2f0</Resource>
+    <Scopes>
+      <Scope>openid</Scope>
+      <Scope>profile</Scope>
+      <Scope>User.Read</Scope>
+    </Scopes>
+  </WebApplicationInfo>
 </OfficeApp>"
 `;
