@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.5...v0.0.6)
+
+### 🩹 Fixes
+
+- Update office.js script ([2b1926d](https://github.com/dapotatoman/msoffice-addin/commit/2b1926d))
+- **nuxt:** Regexp not working ([f950372](https://github.com/dapotatoman/msoffice-addin/commit/f950372))
+- `serialize` slash issues ([3b63eb9](https://github.com/dapotatoman/msoffice-addin/commit/3b63eb9))
+
+### 🏡 Chore
+
+- Update docs ([a002829](https://github.com/dapotatoman/msoffice-addin/commit/a002829))
+- Update tests ([6267290](https://github.com/dapotatoman/msoffice-addin/commit/6267290))
+
+### ❤️ Contributors
+
+- Dapotatoman <iam.fahadul@gmail.com>
+
 ## v0.0.5
 
 [compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.4...v0.0.5)
