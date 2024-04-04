@@ -26,6 +26,7 @@ MS Office addin for Nuxt and Vite
 - 🌍 Supports both Nuxt & Vite
 - ⚙️ ENV variables support in manifest files
 - 🧬 Same manifest routes in dev and build
+- 💉 Auto inject Office.js in routes
 
 ## Quick Setup
 
