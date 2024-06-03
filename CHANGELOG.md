@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.6...v0.0.7)
+
+### 🚀 Enhancements
+
+- Update manifest generation order ([84a5f74](https://github.com/dapotatoman/msoffice-addin/commit/84a5f74))
+
+### ❤️ Contributors
+
+- Dapotatoman <iam.fahadul@gmail.com>
+
 ## v0.0.6
 
 [compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.5...v0.0.6)
