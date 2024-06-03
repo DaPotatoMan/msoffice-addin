@@ -12,27 +12,25 @@ export default defineNuxtModule<MSOfficeAddinConfig>({
     const { vite } = nuxt.options
     const { resolve } = createResolver(import.meta.url)
 
-    const manifests = transformManifests({
-      mode: vite.mode!,
-      envDir: vite.envDir ?? process.cwd(),
-      inputs: options.manifests,
-      defineENV: options.defineENV,
-    })
-
-    const contextImportKey = '#office-addin-content'
-    const context = `export default ${serialize({ manifests, options })}`
-
-    // Set manifest routes to pre-rendering
-    addPrerenderRoutes(
-      manifests.flatMap(entry => entry.route),
-    )
-
     // Register nitro plugin
     addServerPlugin(resolve('./runtime/loader.server'))
 
-    nuxt.hook('nitro:config', async (nitro) => {
+    nuxt.hooks.hookOnce('nitro:config', async (nitro) => {
+      const manifests = transformManifests({
+        mode: vite.mode!,
+        envDir: vite.envDir ?? process.cwd(),
+        inputs: options.manifests,
+        defineENV: options.defineENV,
+      })
+
+      // Set manifest routes to pre-rendering
+      addPrerenderRoutes(
+        manifests.flatMap(entry => entry.route),
+      )
+
+      // Add virtual file
       nitro.virtual ||= {}
-      nitro.virtual[contextImportKey] = context
+      nitro.virtual['#office-addin-content'] = `export default ${serialize({ manifests, options })}`
     })
   },
 })
