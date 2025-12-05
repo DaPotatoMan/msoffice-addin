@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.7...v0.0.8)
+
+### 🩹 Fixes
+
+- Lint issues ([5bb283d](https://github.com/dapotatoman/msoffice-addin/commit/5bb283d))
+
+### 🏡 Chore
+
+- Update deps ([f71483a](https://github.com/dapotatoman/msoffice-addin/commit/f71483a))
+
+### ❤️ Contributors
+
+- Fahad ([@DaPotatoMan](http://github.com/DaPotatoMan))
+
 ## v0.0.7
 
 [compare changes](https://github.com/dapotatoman/msoffice-addin/compare/v0.0.6...v0.0.7)
