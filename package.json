@@ -49,7 +49,7 @@
     "@antfu/eslint-config": "^2.11.6",
     "@nuxt/devtools": "latest",
     "@nuxt/eslint": "0.3.0-beta.7",
-    "@nuxt/module-builder": "^0.5.5",
+    "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^3.11.1",
     "@nuxt/test-utils": "^3.12.0",
     "@types/fs-extra": "^11.0.4",
