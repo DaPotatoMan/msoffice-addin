@@ -36,8 +36,8 @@ export function transformManifests(params: {
     const manifest = fs.readFileSync(src).toString('utf-8')
 
     /** Transformed manifest content */
-    const content = manifest.replaceAll(/{(VITE|NUXT)_.*?}/gm, (pattern) => {
-      const key = pattern.replace(/{|}/gm, '')
+    const content = manifest.replaceAll(/\{(VITE|NUXT)_.*?\}/g, (pattern) => {
+      const key = pattern.replace(/\{|\}/g, '')
 
       if (key in env)
         return env[key]
