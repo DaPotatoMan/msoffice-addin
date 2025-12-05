@@ -1,2 +1,5 @@
 packages:
   - playground/*
+
+minimumReleaseAge: 4320 # 3 Days
+trustPolicy: no-downgrade
