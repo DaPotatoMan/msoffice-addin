@@ -3,3 +3,6 @@ packages:
 
 minimumReleaseAge: 4320 # 3 Days
 trustPolicy: no-downgrade
+minimumReleaseAgeExclude:
+  # Renovate security update: vitest@4.1.0
+  - vitest@4.1.0
