@@ -3,3 +3,6 @@ packages:
 
 minimumReleaseAge: 4320 # 3 Days
 trustPolicy: no-downgrade
+minimumReleaseAgeExclude:
+  # Renovate security update: vite@7.3.5
+  - vite@7.3.5
