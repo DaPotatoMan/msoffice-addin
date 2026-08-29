@@ -3,3 +3,6 @@ packages:
 
 minimumReleaseAge: 4320 # 3 Days
 trustPolicy: no-downgrade
+minimumReleaseAgeExclude:
+  # Renovate security update: nuxt@4.5.1
+  - nuxt@4.5.1
