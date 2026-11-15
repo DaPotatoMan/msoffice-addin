@@ -3,3 +3,6 @@ packages:
 
 minimumReleaseAge: 4320 # 3 Days
 trustPolicy: no-downgrade
+minimumReleaseAgeExclude:
+  # Renovate security update: @nuxt/schema@4.6.4
+  - "@nuxt/schema@4.6.4"
